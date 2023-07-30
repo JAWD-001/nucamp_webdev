@@ -1,0 +1,87 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator -</title>
+    <link rel="stylesheet" href="calc.css"></link>
+  </head>
+  <body>
+    <div class="calc">
+      <div class="calc-screen">0</div>
+      <div class="calc-keys">
+        <button class="operator" data-action="charge">+/-</button>
+        <button class="operator" data-action="square-root">&Sqrt;</button>
+        <button class="operator" data-action="percent">%</button>
+        <button class="operator" data-action="divide">&divide;</button>
+        <button class="operator" style="text-decoration: line-through">
+          MRC
+        </button>
+        <button class="operator" style="text-decoration: line-through">
+          M-
+        </button>
+        <button class="operator" style="text-decoration: line-through">
+          M+
+        </button>
+        <button class="operator" data-action="multiply">&times;</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator" data-action="subtract">&minus;</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator" data-action="add">&plus;</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="operator" data-action="calculate">&equals;</button>
+        <button class="operator" data-action="clear">C</button>
+        <button>0</button>
+        <button data-action="decimal">.</button>
+      </div>
+    </div>
+    <script>
+      const calculator = document.querySelector(".calc");
+      const keys = calculator.querySelector(".calc-keys");
+      const display = document.querySelector(".calc-screen");
+
+      keys.addEventListener("click", (e) => {
+        if (e.target.matches("button")) {
+          const key = e.target;
+          const action = key.dataset.action;
+          const keyContent = key.textContent;
+          const displayedNum = display.textContent
+          if (!action) {
+            if (displayedNum === '0'){
+                display.textContent = keyContent     
+            } else {
+                display.textContent = displayedNum + keyContent
+            }
+        }
+            console.log("number key!");
+          } else if (
+            action === "square-root" ||
+            action === "percent" ||
+            action === "divide" ||
+            action === "multiply" ||
+            action === "subtract" ||
+            action === "add"
+          ) {
+            console.log("operator key");
+          } if (action === 'charge'){
+                console.log('charge key')
+            }
+            if (action === 'calculate'){
+                console.log('calculate key')
+            }
+            if (action === 'clear'){
+                console.log('clear key')
+            }
+            if (action === 'decimal'){
+                display.textContent = displayedNum + '.'
+            }
+        })
+
+    </script>
+  </body>
+</html>
