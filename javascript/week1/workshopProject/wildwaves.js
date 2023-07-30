@@ -8,10 +8,7 @@ function buyTicket() {
     "'Which attraction do you want to visit: type 'wave' for wave pool, 'water' for waterslide, or 'river' for lazy river?'"
   );
   const userHeight = prompt("What is your height in inches?");
-  console.log("User's selected attraction is " + attractionType);
-  console.log("User's height is " + userHeight);
   const isAllowed = checkHeight(attractionType, userHeight);
-  console.log(isAllowed);
   if (isAllowed === true) {
     alert(`Awesome, you are tall enough to ride ${attractionType}!`);
   } else if (isAllowed === false && userHeight >= 43) {
@@ -33,14 +30,10 @@ function buyTicket() {
 function checkHeight(attraction, height) {
   if (height >= WATERSLIDE_MIN_HEIGHT) {
     return true;
-  } else if (height < WATERSLIDE_MIN_HEIGHT) {
-    if (attraction === "river" && height >= LAZY_RIVER_MIN_HEIGHT) {
-      return true;
-    } else if (attraction === "wave" && height >= WAVE_POOL_MIN_HEIGHT) {
-      return true;
-    } else {
-      return false;
-    }
+  } else if (attraction === "river" && height > LAZY_RIVER_MIN_HEIGHT) {
+    return true;
+  } else if (attraction === "wave" && height >= WAVE_POOL_MIN_HEIGHT) {
+    return true;
   } else {
     return false;
   }
