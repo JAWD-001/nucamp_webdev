@@ -22,9 +22,9 @@ function getAge() {
 function ticketCost(age) {
   let cost = undefined;
   if (age < 12 || age > 65) {
-    cost = 10;
+    cost = GENERAL_ADMISSION_TICKET;
   } else {
-    cost = 20;
+    cost = CHILD_SENIOR_TICKET;
   }
   return cost;
 }
