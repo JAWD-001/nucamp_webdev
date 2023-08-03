@@ -41,7 +41,7 @@ newArray.includes(1);
 // true will be returned
 
 //.indexOf() also checks if an item is in an array, but returns the index value of that item, if not then -1 will be returned
-let itemIndex = newArray.indexOf(1);
+let itemIndx = newArray.indexOf(1);
 // 0 will be returned
 
 let itemIndex = newArray.indexOf(5);
