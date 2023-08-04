@@ -72,3 +72,45 @@ herosArray.splice(0, 1, "captain america", "venom");
 
 //to remove using splice just use two index arguements, first is index to start removing, second is the amount to splice.
 marvelHerosArray = herosArray.splice(4, 7);
+
+//looping through arrays with for loops
+const pets = ["dogs", "cats", "ferrets", "fish"];
+for (let i = 0; i < pets.length; i++) {
+  console.log(`I have a ${pets[i]}`);
+}
+
+//for of loops
+for (let pet of pets) {
+  console.log(`I have a ${pet}`);
+}
+
+for (let i = 0; i < pets.length; i++) {
+  pets[i] = pets[1].toLocaleUpperCase();
+}
+
+for (let pet of pets) {
+  pet.toUpperCase();
+  console.log(pet);
+}
+console.log(pets);
+
+//other ways to loop, filter(), map(), .reduce(), .find(), .forEach()
+
+//can control the for loop with either break or continue
+//break breaks out of the loop
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    break;
+  }
+  console.log(i);
+}
+//breaks at 5, only shows up to 4
+
+//continue stops current iteration and goes right back to the beginning of the loop
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    continue;
+  }
+  console.log(i);
+}
+//will print 0-4, skip 5, then 6-9
