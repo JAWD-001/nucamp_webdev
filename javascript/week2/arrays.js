@@ -46,3 +46,29 @@ let itemIndx = newArray.indexOf(1);
 
 let itemIndex = newArray.indexOf(5);
 // -1 will be returned
+
+//concat() a method to join two seperate arrays into one single new array
+const newArray2 = [5, 6, 7, 8];
+concatArray = newArray.concat(newArray2);
+console.log(concatArr);
+
+//sort() to alphabetically sort array of strings, mutates the original array
+let herosArray = ["batman", "superman", "aquaman", "wonderwoman", "flash"];
+console.log(herosArray.sort());
+
+//reverse() orders the items in an array backwards
+console.log(herosArray.reverse());
+
+//slice() copies part of an array and places it in a second array, doesn't change original array
+herosArray.sort();
+maleHeros = herosArray.slice(0, 3);
+
+//splice() inserts, adds to, or removes items from an array at any point not just begining or end.
+//to add must have three arguements in the splice(), first is starting index, second is always 0 when adding, and the third is the item that you want to insert.
+herosArray.splice(4, 0, "wolverine", "captain america", "spiderman");
+
+//can also replace items through this method, just make sure that the two indexes start and end in the index of the array that you want to mutate
+herosArray.splice(0, 1, "captain america", "venom");
+
+//to remove using splice just use two index arguements, first is index to start removing, second is the amount to splice.
+marvelHerosArray = herosArray.splice(4, 7);
