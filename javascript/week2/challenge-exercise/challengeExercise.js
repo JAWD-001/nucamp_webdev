@@ -13,6 +13,7 @@ function runGame() {
     correct = checkGuess(guessNumber, targetNum);
     alert(guessNumber);
   } while (!correct);
+  alert("You guessed correctly!");
 }
 
 function checkGuess(guessNumber, targetNum) {
