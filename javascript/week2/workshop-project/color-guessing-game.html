@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Guessing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body style="background-image: linear-gradient(to bottom right, #f98dc9, #27fdf5); color:black;font-family:Roboto; margin-top: 250px;">
+    <div style="display:flex; justify-content:center;">
+      <div style="width:50%;display:flex; justify-content:center; align-items:center; flex-direction:column; text-shadow:1px 1px 6px;border:2px solid black; border-radius: 5px;box-shadow: 5px 5px 30px;">
+        <h1 >Color Guessing Game</h1>
+        <h4>Welcome to the color guessing game, click the button below to get started!</h4>
+        <button type="button" style="background-color:#27fdf5;color:black; border-radius:4px; border-width:1px; padding:10px; box-shadow: 3px 2px 6px;margin-bottom:20px;" onclick="runGame()">Start Game</button>
+      <div>
+    </div>
+    <script>
+      COLORS_ARRAY = [
+  "blue",
+  "cyan",
+  "gold",
+  "gray",
+  "green",
+  "magenta",
+  "orange",
+  "red",
+  "yellow",
+  "white",
+];
+
+function runGame() {
+  let guess = "";
+  let correct = false;
+  const targetIndex = Math.floor(Math.random() * COLORS_ARRAY.length);
+  const target = COLORS_ARRAY[targetIndex];
+  let numTries = 0;
+  console.log(`taget ${target}`);
+  do {
+    guess = prompt(
+      `I am thinking of one of these colors: 
+      \n${COLORS_ARRAY.sort().join(", ")}.
+      \nWhat color am I thinking of?`
+    );
+    console.log(guess);
+    if (guess === null) {
+      alert("Thank you for playing, try again soon!");
+      return;
+    }
+    correct = checkGuess(guess.toLowerCase(), target);
+    numTries++;
+  } while (!correct);
+  alert(`Congratulations, you won! It only took you ${numTries} tries!`);
+}
+
+function checkGuess(guess, target) {
+  let correct = false;
+  guess = guess.toLowerCase();
+  if (COLORS_ARRAY.includes(guess)) {
+    if (guess < target) {
+      alert("Your guess lower in the alphabet, please try again.");
+    } else if (guess > target) {
+      alert("Your guess is higher in the alphabet, please try again.");
+    } else {
+      document.body.style.background = guess;
+      correct = true;
+    }
+  } else {
+    alert("Your color is not listed, please try again.");
+  }
+  return correct;
+}
+
+    </script>
+  </body>
+</html>
