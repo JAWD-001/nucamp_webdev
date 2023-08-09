@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   </head>
-  <body style="background-color: #f98dc9; color:black;font-family:Roboto; margin-top: 250px;">
+  <body style="background-image: linear-gradient(to bottom right, #f98dc9, #27fdf5); color:black;font-family:Roboto; margin-top: 250px;">
     <div style="display:flex; justify-content:center;">
       <div style="width:50%;display:flex; justify-content:center; align-items:center; flex-direction:column; text-shadow:1px 1px 6px;border:2px solid black; border-radius: 5px;box-shadow: 5px 5px 30px;">
         <h1 >Color Guessing Game</h1>
@@ -50,7 +50,7 @@ function runGame() {
     correct = checkGuess(guess.toLowerCase(), target);
     numTries++;
   } while (!correct);
-  alert(`Congratulations, you won! It only took you ${numTries}`);
+  alert(`Congratulations, you won! It only took you ${numTries} tries!`);
 }
 
 function checkGuess(guess, target) {

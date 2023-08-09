@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Practice</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let companies = `[
+      {
+        "name": "nucamp",
+        "numEmployees": 150,
+        "CEO": "Ludo",
+        "glassDRating": 5.0
+      },
+      {
+        "name": "digital flamingo",
+        "numEmployees": 2,
+        "CEO": "James Dycus",
+        "glassDRating": 5.0
+      },
+      {
+        "name": "someone else",
+        "numEmployees": 1,
+        "CEO": null,
+        "glassDRating": 2.3
+      }
+    ] `;
+      console.log(JSON.parse(companies));
+      console.log(JSON.parse(companies)[1].CEO);
+    </script>
+  </body>
+</html>
