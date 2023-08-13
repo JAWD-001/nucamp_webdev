@@ -22,12 +22,12 @@ class Bootcamp {
 			return false;
 		}
 		if (this.students.find(stu => stu.email === studentToRegister.email)){
-				console.log(`Invalid email`);
-				return false;
+			console.log(`A student with this email is already registered`);
+			return false;
 			} 
 		this.students.push(studentToRegister);
-			console.log(`${studentToRegister.name} registered to ${this.name}`);
-			return true;
+		console.log(`${studentToRegister.name} registered to ${this.name}`);
+		return true;
 	}
 
 		
@@ -41,6 +41,14 @@ class Bootcamp {
 			return true;
 		}
 	}	
+
+	removeStudent(email){
+		let index = this.students.find((stu) => stu.email === email);
+		//for multiple, could do let stusRegistered = this.students.filter((stus) => stus.email !== email);
+		if (index) {
+			console.log(`${index.name} removed`);
+		}
+	}
 }
 
 
@@ -68,6 +76,7 @@ const runTest = (bootcamp, student) => {
     bootcamp.registerStudent(new Student('Babs Bunny', 'babs@bunny.com'));
     if (bootcamp.listStudents()) {
         console.log("TASK 4: PASS 1/2");
+		bootcamp.removeStudent('babs@bunny.com')
     }
     bootcamp.students = [];
     if (!bootcamp.listStudents()) {
