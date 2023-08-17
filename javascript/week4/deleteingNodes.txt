@@ -1,0 +1,30 @@
+//Can delete nodes in the dom by using either remove() or removeChild() node methods
+
+//remove() must have a reference to the exact node to remove, for example....nodeToRemove is ouor made up variable holding the node that we want to delete...
+
+
+
+modeToRemove.remove() 
+
+
+
+//this will delete the node that is stored in the nodeToRemove variable.
+
+
+
+//removeChild() takes an argument of the parent node.child to remove the child node from the parent node element.
+
+
+parentNode.removeChild(parentNode.firstChild)
+
+//this remove the first child of the parent node element
+.....if any child nodes exist, they will be deleted when removed with either method.....
+can remove all children with a removeChild and for loop
+
+while(parentNode.firstChild){
+    parentNode.removeChild(parentNode.firstChild)
+}
+//this while loop removes all first children nodes, when each node is removed, then the next node, if one exists, becomes the new first child and is then removed as well
+
+
+using .firstElementChild on a parent node will give you the first HTML element child, which skips any text nodes or whitespace nodes 

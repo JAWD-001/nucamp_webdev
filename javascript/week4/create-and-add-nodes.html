@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Create and Add Nodes Demo</title>
+    <style>
+      p {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body class="all">
+    <p id="firstP" onclick="insertNewElement()">
+      Click this text to insert a new hr element to the page
+    </p>
+
+    <p id="secondP" onclick="insertNewText()">
+      Click this text to append a new text child node to the page
+    </p>
+
+    <p id="lastP" onclick="appendNewText()">
+      click here for the newest and dopest last child node to be made!
+    </p>
+
+    <button onclick="deleteAppendNewText()">
+      Delete one of those dope nodes
+    </button>
+
+    <button onclick="deleteAllAppendedNodes()">
+      Delete all the dope nodes
+    </button>
+
+    <button onclick="deleteItAll()">Delete it all</button>
+
+    <script>
+      const dopeParentNode = document.querySelector("#lastP");
+
+      function insertNewElement() {
+        const newEl = document.createElement("hr");
+        const parentNode = document.querySelector("#firstP");
+        parentNode.insertBefore(newEl, parentNode.firstChild);
+      }
+
+      function insertNewText() {
+        const newText = document.createTextNode(
+          " This is dynamically added text!"
+        );
+        const parentNode = document.getElementById("secondP");
+        parentNode.appendChild(newText);
+      }
+
+      function appendNewText() {
+        const newAppend = document.createTextNode(
+          "This is another new text node"
+        );
+        const newParNode = document.querySelector("#lastP");
+        newParNode.appendChild(newAppend);
+      }
+
+      function deleteAppendNewText() {
+        dopeParentNode.removeChild(dopeParentNode.firstElementChild);
+      }
+
+      function deleteAllAppendedNodes() {
+        while (dopeParentNode.firstChild) {
+          dopeParentNode.removeChild(dopeParentNode.firstChild);
+        }
+      }
+
+      function deleteItAll() {
+        wholeDOM = document.querySelector(".all");
+        wholeDOM.remove();
+      }
+    </script>
+  </body>
+</html>
