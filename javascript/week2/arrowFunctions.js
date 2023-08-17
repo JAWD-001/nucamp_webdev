@@ -36,3 +36,6 @@ console.log(adder2(2, 3));
 //if single parameter, then can omit parathesis
 const double = (a) => a * 2;
 console.log(double(2));
+
+
+const convertToF = (c) => (c * 9/5) + 32;
