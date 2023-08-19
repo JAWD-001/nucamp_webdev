@@ -1,0 +1,15 @@
+cloning nodes allows for you to make a new node based on another node
+
+cloneNode() is the function to be able to clone a node that you have reference to. 
+--Must have a reference to the exact reference that you want to node, typically will be stored in a variable
+
+const newNode = nodeToClone.cloneNode();
+-- this closed the node that you are cloning, not including children, siblings, etc. 
+-- additionally, must still attach the node to the DOM
+-- however, if you add true to, like so, cloneNode(true), it will clone all children nodes.
+
+const newNode = nodeToClose.cloneNode(true) will clone the node and all children nodes as well.
+
+--still not attached to the dom, must do that with .appendChild
+
+//lastElementChild is the property version of the lastChild for elements only and skips text and whitespace nodes

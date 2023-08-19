@@ -1,0 +1,48 @@
+Mouse event handlers:
+
+onclick()
+onmousedown()
+onmouseup()
+onmouseover()
+onmouseout()
+
+onclick()
+set as an attribute of a clickable HTML element, runs the JS in the attribute value anytime the element is clicked, typically used to call a function
+
+<h1 onclick="changeBackground();"</>
+
+onmousedown()
+called when a mouse is clicked down
+
+onmouseup()
+called when a mouse is clicked and released
+
+onmouseover()
+called when a mouse is hovering over an element with your mouse
+
+onmouseout()
+called when the mouse is moved off the element that you're hovering over
+
+
+can add events to HTML using addEventListener() and removeEventListener with JS
+can add and remove multiple events with these methods
+typically used on a DOM element node
+takes two arguements, the first is the event "mouseover/mouseout/click/mousedown/mouseup"
+
+like such 
+let parentNode = document.querySelector('div');
+parentNode.addEventListener('mouseover', changeBackground())
+parentNode.addEventListener('mouseout', revert);
+
+
+function changeBackground(){
+    div.style.color = 'orange';
+    div.removeEventListener('mouseover', changeBackground);
+}
+
+function revert(){
+    div.style.color = 'white';
+    
+}
+
+this code adds background color when mouseover, but removes the evenetlistener when mouse is moved off. Also changes the color back to white. This means that the code will only ever run once to change the background color and then be removed.
