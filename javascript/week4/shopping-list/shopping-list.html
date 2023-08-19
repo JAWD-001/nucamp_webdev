@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List App</title>
+    <style>
+      ul {
+        list-style-type: "\2610 ";
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Shopping List</h1>
+    <form id="myForm">
+      <label for="item">Add an item:</label>
+      <input id="item" type="text" name="item" />
+      <button onClick="getItem()">Add</button>
+    </form>
+    <ul id="shoppingList">
+      <!-- list items will go into this ul via DOM manipulation -->
+    </ul>
+    <script>
+      ITEMS_ARRAY = [];
+
+      function getItem() {
+        event.preventDefault();
+        const item = document.getElementById("item").value;
+        if (!ITEMS_ARRAY.includes(item)) {
+          ITEMS_ARRAY.push(item);
+          ITEMS_ARRAY.sort();
+          removeList(ITEMS_ARRAY);
+          makeList(ITEMS_ARRAY);
+        }
+        document.getElementById("myForm").reset();
+        console.log(ITEMS_ARRAY);
+      }
+
+      const shoppingList = document.getElementById("shoppingList");
+
+      function makeList(list) {
+        for (let item of list) {
+          listItem = document.createElement("li");
+          listItem.textContent = item;
+          shoppingList.appendChild(listItem);
+          listItem.addEventListener("click", removeItem);
+        }
+      }
+
+      function removeList(list) {
+        while (shoppingList.firstChild) {
+          shoppingList.removeChild(shoppingList.firstChild);
+        }
+      }
+
+      function removeItem(event) {
+        const item = event.currentTarget.textContent;
+        const itemIndex = item.indexOf();
+        const itemDeleted = ITEMS_ARRAY.splice(itemIndex);
+        removeList(ITEMS_ARRAY);
+        makeList(ITEMS_ARRAY);
+      }
+    </script>
+  </body>
+</html>
