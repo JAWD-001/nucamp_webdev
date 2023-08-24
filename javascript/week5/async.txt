@@ -1,0 +1,19 @@
+async programming allows time-consuming operations to run in the background
+and provide results when ready, without bloxking other operations.
+can be used through:
+- promises 
+- async/await
+
+async is important because it allows us to write code that has:
+- improved application performance
+	+ Doesn't block other code from running
+- enables concurency
+	+ allows multiple operations to run simultaneously
+- better user experience
+	+ app remains responsive during long-running tasks
+- more efficient resource utilization
+	+ maximizes use of system resources by preventing them from being blocked
+- simple code flow
+	+ code avoids callback hell and complex code flaws
+- scalability
+	+ scale better by making optimal use of resources
