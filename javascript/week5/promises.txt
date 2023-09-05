@@ -1,0 +1,30 @@
+Promises are values that may not be available yet, but will be available at a later time
+Allow us to write cleaner async JS code
+
+crucial to JS for
+- consistent interface to handle async operations
+- readable chains instead of using nested callbacks
+- allows catching errors more easily
+
+can be in one of three states
+- pending
+	+ value not determined yet
+- resolved
+	+ value has been successful and retained a payload
+- rejected
+	+ value has been rejected and payload contains error data
+
+created using the Promise constructor
+
+const myPromise = new Promise((resolve, reject) => {
+	let condition = true;
+	if (condition) {
+		const message = 'success';
+		console.log(message);
+		resolve(message);
+	} else {
+		const message = 'failed';
+		console.log(message);
+		reject(message);
+	}
+});
