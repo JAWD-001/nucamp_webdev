@@ -4,3 +4,10 @@ Javascript engine is an engine that reads javascript file line-by-line and execu
 
 The window object contains a document object that has the html and css for the page.
 The javascript engine for that browser then reads the JS file and allows the browswer to be ineracted with.
+
+Can transverse the dom by declaring the document.body objects as node
+node = document.body
+This allows you to call certain objects as in 
+
+node.firstChild = first child node of node
+node.childNodes[1] = second child of the node element
