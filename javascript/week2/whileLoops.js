@@ -5,6 +5,13 @@ while (i < 10) {
   console.log(`i is currently: ${i}`);
 }
 
+let students = ['james', 'daniella', 'theo', 'henry']
+
+while (students[i] < 10) {
+  console.log(`Welcome to class ${students[i]}`);
+  i++;
+}
+
 do {
   i++;
   console.log(`i is currently: ${i}`);
