@@ -1,0 +1,48 @@
+What is the DOM?
+
+DOM is eseentially the document that the browser creates to allow us to manipulate and/or modify the document with javascript
+
+Javascript engine is an engine that reads javascript file line-by-line and executes in the browser
+
+The window object contains a document object that has the html and css for the page.
+The javascript engine for that browser then reads the JS file and allows the browswer to be ineracted with.
+
+Can transverse the dom by declaring the document.body objects as node
+node = document.body
+This allows you to call certain objects as in 
+
+node.firstChild = first child node of node
+node.childNodes[1] = second child of the node element
+
+
+
+DOM Selectors
+
+let allP = document.getElementsByTagName("p");
+//gets all p objects in the document//
+
+let elementID = document.getElementByID("first");
+//gets only the sinlge id element, remember IDs are unique//
+	
+let elementAllClass = docment.getElementsByClassName("second");
+//gets all elements with the second class name
+	
+let elementQuery = document.querySelector('li')
+//will select only the first item that it finds
+
+let elementQueryAll = document.querySelectorAll('li,h1')
+// will select all of the li items and also the h1 element
+
+
+
+Adding attributes and classes to objects in the DOM
+
+getAttribute
+gets the attribute of the called node
+so..
+
+elementQueryAll.getAtribute('random')
+returns the li element that contains the attribute named random
+
+elementQuery.setAttribute('height","100px")
+selects the first li element and adds height attribute of 100px to it
