@@ -16,7 +16,7 @@ node.childNodes[1] = second child of the node element
 
 
 
-DOM Selectors
+*** DOM QUERY SELECTORS ***
 
 let allP = document.getElementsByTagName("p");
 //gets all p objects in the document//
@@ -35,7 +35,7 @@ let elementQueryAll = document.querySelectorAll('li,h1')
 
 
 
-Adding attributes and classes to objects in the DOM
+*** ADDING AND CHANGING CSS STYLES TO ELEMENTS IN THE DOM ***
 
 getAttribute
 gets the attribute of the called node
@@ -46,3 +46,34 @@ returns the li element that contains the attribute named random
 
 elementQuery.setAttribute('height","100px")
 selects the first li element and adds height attribute of 100px to it
+
+
+Adding classes to elements (using domSelectors.html)
+let h1 = document.querySelector('h1');
+h1.style; <--- style property of the h1 element, taps into CSS styles
+
+h1.style.background = 'yellow'; <-- changes background style to yellow on the H1 tag 
+
+....however, remember that we want to keep CSS and HTML seperate....
+better to use the querySelector('whateverElement').className  or querySelector('whateverElement').classList
+
+h1.className = 'coolTitle'; 
+this adds the class name of coolTitle to the element and all css styling that goes with it
+
+NEW EXAMPLE 
+li = document.querySelectorAll('li')
+
+li.classList lists all classes on the element
+
+li.classList.add('coolTitle'); 
+//this adds the class coolTitle to the classes of all the li elements
+
+li.classList.remove('coolTitle')
+//this removes the class coolTitle from the class list of the li elements
+li.classList.add('done') <---adds a strikethrough for the li elements
+
+li.classList.toggle('done')
+this doesn't remove or add classes, but turns the class on or off
+//helpful for something like a onClick toggle for task lists
+
+
