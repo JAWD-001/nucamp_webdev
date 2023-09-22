@@ -1,0 +1,67 @@
+EVENTS
+Events are actions that occur within the DOM, can add them to elements
+
+onClick = 
+inline event element that will run the javascript function that's declared in the onClick= value
+
+<h1 onclick="changeColor()">Click Me!</h1>
+
+
+onmousedown and onmouseup =
+same setup as onclick element
+onmousedown = when the mouse button has been clicked down
+onmousedoup = when the mouse button has been released after clicked
+
+<h1 onmousedown="changeColor();" onmouseup="revertColor()">Click Me! </h1>
+
+
+onmoouseover and onmouseout
+same setup as onclick
+onmouseover = when a mouse moves over an element
+onmouseout = when a mouse moves off of an element
+
+***3X4MPL3***
+<h1 onmouseover="changeColor('red');" onmouseout="reverColor('white')">Click Me</h1>
+
+function changeColor(newColor){
+	document.getElementsByTagName('h1')[0].style.background = newColor;
+}
+
+function revertColor(newColor){
+	document.getElementsByTagName('h1')[0].style.background = newColor;
+}
+
+
+EVENT HANDLERS WITH JS
+Can add eventlisteners to specific nodes of the DOM
+This allows you to add more than one event handler function to the same event and the same element, inline won't let you
+
+
+node.addEventListener('eventName', functionToRun);
+
+when using event handlers you include the event WITHOUT the on in the function call
+*click
+*mouseup
+*mousedown
+*mouseover
+*mouseout
+
+additionally, use the function name without arguements list
+*shift
+*unshift
+
+let div = document.querySelectorAll('div');
+
+div.addEventListener('click', changeColor);
+div.addEventListener('click', changeBackground);
+
+// caches all div nodes into the div variable
+// adds two event listeners (click and mouseup) to all divs
+// also allows more than one eventhandler for an event on the same elements, can't do that with inline
+
+
+can delete event listeners with removeEventListener();
+node.removeEventListener('eventName', functionToRun);
+
+div.removeEventListener('mouseover', changeBackground);
+// this removes the changeBackground event listener after the first mouseover

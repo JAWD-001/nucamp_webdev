@@ -5,16 +5,13 @@
     <title>Onmousedown & Onmouseup Demo</title>
 </head>
 <body>
-    <h1 onmousedown="changeBackground();" onmouseup="revertBackground()">Click Me</h1>
+    <h1 onmousedown="changeBackground('cyan');" onmouseup="changeBackground('white')">Click Me</h1>
 
     <script>
-        const h1 = document.getElementsByTagName('h1')[0];
-
-        function changeBackground() {
-            h1.style.background = 'orange';
-        }
-        function revertBackground() {
-            h1.style.background = 'white';
+        const h1 = document.querySelector('h1');
+        
+        function changeBackground(newColor){
+            h1.style.background = newColor;
         }
     </script>
 </body>
