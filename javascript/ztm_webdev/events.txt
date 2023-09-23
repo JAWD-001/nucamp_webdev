@@ -65,3 +65,10 @@ node.removeEventListener('eventName', functionToRun);
 
 div.removeEventListener('mouseover', changeBackground);
 // this removes the changeBackground event listener after the first mouseover
+
+
+
+
+
+MDN documentation, mostly will use key press and mouse
+https://developer.mozilla.org/en-US/docs/Web/Events
