@@ -4,30 +4,41 @@ let elementID = document.getElementById("first");
 //gets only the sinlge id element, remember IDs are unique//
 let elementAllClass = document.getElementsByClassName("second");
 //gets all elements with the second class name
-let elementQuery = document.querySelector('li')
+let elementQuery = document.querySelector("li");
 //will select only the first item that it finds
-let elementQueryAll = document.querySelectorAll('li,h1')
+let elementQueryAll = document.querySelectorAll("li,h1");
 // will select all of the li items and also the h1 element
 
-let itemInput = document.getElementById('item-input');
+let itemInput = document.getElementById("item-input");
 
-let button = document.getElementById('enter');
+let button = document.getElementById("enter");
 
-let list = document.querySelector('ul')
+let list = document.querySelector("ul");
 
-button.addEventListener('click', function () {
-	if (itemInput.value.length > 0) {
-		newLi = document.createElement('li');
-		newLi.appendChild(document.createTextNode(itemInput.value));
-		list.appendChild(newLi);
-		itemInput.value = '';
-	}
-} )
+button.addEventListener("click", function () {
+  if (itemInput.value.length > 0) {
+    let newLi = document.createElement("li");
+    newLi.appendChild(document.createTextNode(itemInput.value));
+    list.appendChild(newLi);
+    itemInput.value = "";
+  }
+});
 
-button.addEventListener('mouseenter', function () {
-	console.log('MOUSE!')
-} )
+itemInput.addEventListener("keydown", function (event) {
+  if (itemInput.value.length > 0 && event.key === "Enter") {
+    let newLi = document.createElement("li");
+    newLi.appendChild(document.createTextNode(itemInput.value));
+    list.appendChild(newLi);
+    itemInput.value = "";
+  }
+});
 
-button.addEventListener('mouseleave', function () {
-	console.log('MOUSE GONE!')
-})
+//refactoring above code
+
+button.addEventListener("mouseenter", function () {
+  console.log("MOUSE!");
+});
+
+button.addEventListener("mouseleave", function () {
+  console.log("MOUSE GONE!");
+});

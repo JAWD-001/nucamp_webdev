@@ -72,3 +72,8 @@ div.removeEventListener('mouseover', changeBackground);
 
 MDN documentation, mostly will use key press and mouse
 https://developer.mozilla.org/en-US/docs/Web/Events
+
+
+JAVASCRIPT CHARACTER CODES
+https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+
