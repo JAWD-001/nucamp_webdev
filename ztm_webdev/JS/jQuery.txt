@@ -1,0 +1,26 @@
+jQuery 
+
+jQuery is a JS library that intended make DOM manipulation easier
+also tried to bridge the gap between browser compatibility
+
+syntax = always use $(document).ready which means that the DOM document object
+is ready to load the following function when the browser loads
+also use $() infront of elements and DOM related objects like events and elements to select them
+
+Ex:
+$(document).ready (function(){
+	$(p).click(function(){
+		$(this).hide();
+	})
+})
+
+The drawback is that jQuery is imperative which means that you have to tell 
+each element exactly what to do, creates a lot of dependcies, which can become 
+tedious for large websites
+
+imperative = a command, which means that commands can depend on commands, that can depend on commands
+
+React solves this by being declarative, which means that it makes statements about the 
+elements and objects in the DOM. This means that statements exist with relationship to each other
+but not depending on each other
+
