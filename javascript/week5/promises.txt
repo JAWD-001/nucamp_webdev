@@ -28,3 +28,42 @@ const myPromise = new Promise((resolve, reject) => {
 		reject(message);
 	}
 });
+
+once Promises are resolved/rejected then they must enter a then/catch block of code 
+to tell it what to do
+
+HANDLING THE RESULTS OF PROMISES
+When promises are pending the are waiting for an outcome, which can only be resolve or reject
+* resolve occurs when a promise gives a success
+* reject occurs when a promise is not success
+
+
+* if resolved, use a then block to handle the data
+
+const fetchData = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		let success = true;
+		if (success) {
+			resolve('Data fetched successfully');
+		}
+		else {
+			reject('Failed to fetch data')
+		}
+	}, 2000);
+})
+
+fetchData.then((data) => {
+	console.log(data);
+});
+
+* if rejected, then use the catch block to handle errors to prevent code from crashing
+
+fetchData.catch((error) => {
+	console.log(data);
+});
+
+* can use finally to finish up all other processes, whether resolved or rejected
+
+fetchData.finally(() => {
+	console.log('Fetch data is complete');
+})

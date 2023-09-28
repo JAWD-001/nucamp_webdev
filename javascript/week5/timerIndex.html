@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Timer Demo</title>
+</head>
+<body>
+	<button id="start-btn" type="button">Set Alarm</button>
+	<button id="stop-btn" type="button">Stop Alarm</button>
+
+	<script>
+		const startButton = document.querySelector('#start-btn');
+		const stopButton = document.getElementById('stop-btn');
+
+		let timer = 0;
+
+		function setAlarm(){
+			const waitDuration = prompt('How long do you want to wait (1000 = 1 s)?');
+			timer = setTimeout(wakeMeUp, waitDuration);
+		}
+
+		function wakeMeUp(){
+			alert('WAKE UP!')
+		}
+
+		function stopTimer (){
+			clearTimeout(timer);
+		}
+
+		startButton.addEventListener('click', setAlarm);
+		stopButton.addEventListener('click', stopTimer);
+	</script>
+	
+</body>
+</html>

@@ -17,3 +17,8 @@ async is important because it allows us to write code that has:
 	+ code avoids callback hell and complex code flaws
 - scalability
 	+ scale better by making optimal use of resources
+
+Synchronous Code: Executes line by line, waiting for each line to complete before moving to the next. The synchronous code within syncFunction demonstrates this.
+Asynchronous Code: Initiates operations that complete later, allowing the program to continue without waiting. setTimeout in asyncFunction showcases this.
+JavaScript Event Loop: Manages the execution of code, callbacks, and events. It processes the message queue containing callbacks from async functions like setTimeout only after all synchronous code has finished executing.
+Non-blocking I/O: Even with a delay of 0 in setTimeout, the execution of other code is not blocked. The callback still enters the message queue to be executed later, maintaining the asynchronous behavior.
