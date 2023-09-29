@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>News API</title>
+</head>
+<body>
+	<h1>Open your console to see results</h1>
+	<script>
+		const apiKey = getFrom apkiKeys.txt
+		const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+		async function fetchNews(){
+			try {
+				response = await fetch(url);
+				data = await response.json();
+				console.log(data);
+			} catch(error){
+				console.error(error);
+			}
+		}
+
+		fetchNews()
+	</script>
+</body>
+</html>

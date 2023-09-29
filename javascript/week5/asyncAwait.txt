@@ -1,0 +1,31 @@
+async functions are built on async code and promises fundamentals
+async functions make Promises easier to read and maintain
+
+functions that are declared as async will return a Promise
+inside of these functions, you'll see await which cues the function to wait 
+until these Promises are settled
+
+async function doubleAfter2Seconds(x){
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve(x * 2);
+		}, 2000);
+	});
+}
+
+async function fetchData(x){
+	let result = await doubleAfter2Seconds(10);
+	let result2 = await doubleAfter2Seconds(20);
+	return x + result + result2
+}
+
+
+fetchData(10).then((sum) => {
+	console.log(sum);
+});
+
+The above functions provide a promise when called, but wait for the promise to 
+settle in order to provide the data back to the function
+
+Can use await to handle multiple promises sequentially (it will wait to settle one promise
+before moving to the next promise) to avoid a callback hell situation

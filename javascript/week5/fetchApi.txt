@@ -1,0 +1,13 @@
+Fetch API is used to request data from a web server
+builds on the async/await syntax to fetch real world data
+
+Fetch API allows you to make HTTP requests to servers from web browsers
+which means you can retrieve data from a URL without having to do a full page 
+refresh
+
+A GET request is used to retrieve data from a server, Using Fetch, can make a GET with promises like such
+
+fetch('https://api.example.com/data')
+	.then(response => response.json())
+	.then(data => console.log(data))
+	.catch(error => console.error('There was an error'));
