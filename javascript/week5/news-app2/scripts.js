@@ -17,10 +17,38 @@ function displayNews(articles){
 
 	for (const article of articles){
 		const articleDiv = document.createElement('div');
+		articleDiv.classList.add('card');
 
-		const title = document.createElement('h4');
+
+		//create img element
+		const img = document.createElement('img');
+		img.src = article.urlToImage;
+		img.alt = article.title;
+		img.classList.add('card-img-top');
+		articleDiv.appendChild(img);
+
+		const bodyDiv = document.createElement('div');
+		bodyDiv.classList.add('card-body');
+		articleDiv.appendChild(bodyDiv);
+
+
+
+		const title = document.createElement('h5');
 		title.textContent = article.title;
-		articleDiv.appendChild(title);
+		title.classList.add('card-title');
+		bodyDiv.appendChild(title);
+
+		const description = document.createElement('p');
+		description.textContent = article.description;
+		description.classList.add('card-text');
+		bodyDiv.appendChild(description);
+
+		const link = document.createElement('a');
+		link.textContent = 'Article';
+		link.classList.add('btn');
+		link.classList.add('btn-primary');
+		link.href = 'article.url'
+		bodyDiv.appendChild(link);
 
 		newsDiv.appendChild(articleDiv);
 	}
