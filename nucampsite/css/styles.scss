@@ -70,5 +70,11 @@ footer {
   z-index: 100;
 }
 
+.weatherDivEl {
+  margin-right: 6px;
+  text-transform: capitalize;
+}
+
 @import "modal";
 @import "review-section";
+@import "weather";
