@@ -14,7 +14,7 @@ h1 {
 .card-body {
 	display: flex;
 	flex-direction: column;
-	justify-content: ;
+	justify-content: center;
 }
 
 #news {
