@@ -2,6 +2,7 @@ console.log('JS Connected');
 
 const mainScreen = document.querySelector('.main-screen')
 const APIurl = 'https://pokeapi.co/api/v2/pokemon'
+let pokeUrl = ''
 const pokeName = document.querySelector('.poke-name');
 const pokeId = document.querySelector('.poke-id');
 const pokeFImg = document.querySelector('.poke-front-img');
@@ -31,13 +32,22 @@ async function fetchPokemon(){
 }
 
 function displayPokemon(results){
-	console.log(results[0]);
+	pokeUrl = results;
+
+	console.log(pokeUrl);
+	pokeUrl = results[0].url;
+
+	console.log(pokeUrl);
+
 
 }
 
 function handleBtnClick(event){
 	if (event.target.classList === 'left-btn' || event.target.classList === 'right-btn'){
-		displayPokemon();
+		displayPokemon(event.target.url);
+	}
+	if (event.target.classList === 'list-item'){
+		displayPokemon(event.target.url)
 	}
 }
 
