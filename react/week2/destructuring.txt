@@ -1,0 +1,67 @@
+Can destructure array and objects in JS to make them easier to access
+
+const CampsiteCard = ({ campsite }) => {
+    const { image, name } = campsite;
+    return (
+        <Card>
+            <CardImg width='100%' src={image} alt={name} />
+            <CardImgOverlay>
+                <CardTitle>{name}</CardTitle>
+            </CardImgOverlay>
+        </Card>
+    );
+};
+
+Here, we take in the campsite props (like a context variable) and then in the const 
+declaration, we assign the image and name variables the image and name context variables from the 
+campsite object attributes to make them easier to access, which can be seen in the React component
+
+Can also destructure arrays:
+
+const motorcycles = [
+    { 
+        id: 0,
+        make: 'Suzuki',
+        model: 'TU250X',
+        cc: 250
+    },
+    { 
+        id: 1,
+        make: 'Triumph',
+        model: 'Street Twin',
+        cc: 900
+    },
+    {
+        id: 2,
+        make: 'Moto Guzzi',
+        model: 'V7 Stone',
+        cc: 750
+    }
+];
+
+// Use array destructuring to destructure the three objects contained in the motorcycles array into const variables named moto1, moto2, and moto3.
+
+const [ moto1, moto2, moto3 ] = motorcycles;
+console.log('Challenge 1:', moto1.model);
+
+
+
+// Destructure the model property from the moto2 object, inside the parameter list for the listModel() function below.
+
+const listModel = ({model}) => {
+    console.log('Challenge 2:', model);
+};
+ listModel(moto2);
+
+
+
+// Destructure the make, model, and cc properties from the moto3 object.
+
+const listDetails = ({ make, model, cc }) => (
+console.log(`Challenge 3: ${make}, ${model}, ${cc}`));
+listDetails(moto3);
+
+
+// Write a single line of code in line 51 that destructures the id property from moto3 and assigns it to a const named moto3Id.
+const { id : moto3Id } = moto3;
+console.log('Bonus challenge:', moto3Id);
