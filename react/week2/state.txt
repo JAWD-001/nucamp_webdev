@@ -1,0 +1,10 @@
+State = stateful variable
+
+Stateful variable is a variable that are used to keep track of updates in an application
+
+State is the current status of a stateful variable
+
+Global state is the state of the entire application
+
+local state is the state of a specific component
+-- best practice to keep state at the local state
