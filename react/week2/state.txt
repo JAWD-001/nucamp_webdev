@@ -3,8 +3,29 @@ State = stateful variable
 Stateful variable is a variable that are used to keep track of updates in an application
 
 State is the current status of a stateful variable
+-- think of this as an immutable object
+-- object can be replaced by other state variables using state-setting functions
 
 Global state is the state of the entire application
+-- typically used for storing data that you want to share across an application
+-- handled by a state management library like Redux
+	# the global state variable is stored in the Redux store object
+-- can also organize global state so that the global data for each feature corresponds
+	to a "slice"
 
 local state is the state of a specific component
 -- best practice to keep state at the local state
+
+state variables are always created as an object
+-- local state 
+	const state = {
+		clicked: false,
+	}
+-- global state 
+	const state = {
+		currentUser: 'Sam',
+	}
+
+Use a special function called a React Hook function called useState() to manage React's local state
+-- Will maintain global state with React Redux store 
+-- Will use reducer functions to update global store if needed
