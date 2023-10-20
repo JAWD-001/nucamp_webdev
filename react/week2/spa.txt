@@ -1,0 +1,26 @@
+- In an SPA, all html, css, and js are loading into the browser
+- When switching views, SPA intelligently handles front-end rendering, making minimal 
+  requests to web server and re-rendering only what's changed
+- Your browser will still need to make some server requests, typically for data stored in databases, but it won't need
+  to make repetitive requests for application code, e.g. a navigation menu
+- The code will also not be repeated across multiple files, so updating it will be easier
+- Able to build more efficient and scalable websites
+
+Pros
+- reuse code so it's easier to update, maintain, and scale
+- much faster due to fewer server requests
+- steamlined development - easier to divide front and back end
+- easily reuse back-end code for mobile app development
+- easy to debug in browser
+
+Cons 
+- Search engines have trouble crawling SPAs and might negatively useEffect
+  the SE0
+- Dependent on JS being enbaled in browser
+- Initial download of application can be slow
+- Must be careful of memory leaks
+
+Must consider how to handle navigation
+	- includes browser back button and link clicks
+	- react router is the standard third-party navigation and routing
+

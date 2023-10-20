@@ -1,0 +1,28 @@
+React Hooks are a special set of functions to "hook" into React features
+ -- Hooks only work inside function components, will not work in class components
+ -- The useState() hook lets us add local react state to components
+	* can only inoke useState() at the top level of a react component scope, that is before any scope in a component
+ -- The useEffect() hook gives components acess to lifecycle methods
+
+ We can write custom hooks, and many third-party React Libraries use them
+
+useState()
+-- import { useState } from 'react';
+-- useState() with the initial state value, and use array destructuring to convert the array retured by useState() into a state variable and state-changing function
+-- always use that state-changing function to update that state, by passing it the new state value
+
+const counterNumber = useState(0);
+const myCounter = counterNumber(0);
+const setNewCounter = counterNumber[1]
+
+or 
+
+const {counterNumber, setNewCounter } = setState(0);
+
+return (
+	<div onClick=(() => setNewCounter(counterNumber + 1))
+		Count: {counterNumber}
+	</div>
+)
+export default App;
+
