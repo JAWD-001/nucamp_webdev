@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Partner(partner) {
+function Partner({ partner }) {
   if (partner) {
-    let { image, name, description } = partner;
+    const { image, name, description } = partner;
     return (
       <>
         <img src={image} alt={name} style={{ width: '150px' }} />
