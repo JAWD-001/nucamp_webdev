@@ -1,0 +1,26 @@
+React Router is Used to handle routing in SPAs
+
+React Router
+-- Third party library
+-- collection of router, route matching, and navigation components
+-- handles routing requests to different views
+-- Generates unique urls that can be bookmarked by browsers
+-- Handles browser history, can go backwards and forwards
+
+Most commonly used router components
+-- <BrowserRouter>
+	+ Parent router that enables react-router in our app by wrapping around <App>
+	+ Uses HTML5 History API to let us move back and forth in browsing history
+-- <Route>
+	+ Renders the UI for a specific path
+-- <Routes>
+	+ Used to group <Route> components together
+	+ Handles the directing requests to Route similar to JS switching
+-- <Link>
+	+ Creates links to a path, renders as <a> 
+		- use instead of <a>!
+-- <NavLink>
+	+ Special version of <link>, knows which one in a group is selected.
+	+ Useful for applying styles to active link and providing context for assistive
+	  technologies
+	  
